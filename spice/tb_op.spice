@@ -1,0 +1,33 @@
+* Operating point + per-device table, both mirrors (Iref=10u, Vout=0.9V, TT, 27C)
+* Reproduce:  sed "s#PDK_ROOT#$PDK_ROOT#g" tb_op.spice | ngspice -b
+.lib "PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.include "cm_cascode.spice"
+.include "cm_sooch.spice"
+.param IREF=10u
+.param VOUT=0.9
+
+Vvss   vss     0      0
+Iin_c  vss     c_iin  dc {IREF}
+Vo_c   c_vout  vss    {VOUT}
+Xcasc  c_iin   c_vout vss cm_cascode
+
+Iin_s  vss     s_iin   dc {IREF}
+Ib_s   vss     s_ibias dc {IREF}
+Vo_s   s_vout  vss     {VOUT}
+Xsooch s_iin   s_ibias s_vout vss cm_sooch
+
+.control
+op
+print v(c_iin) v(c_vout) v(s_iin) v(s_ibias) v(s_vout)
+print i(Vo_c) i(Vo_s)
+print @m.xcasc.xm1.msky130_fd_pr__nfet_01v8[id] @m.xcasc.xm1.msky130_fd_pr__nfet_01v8[vgs] @m.xcasc.xm1.msky130_fd_pr__nfet_01v8[vds] @m.xcasc.xm1.msky130_fd_pr__nfet_01v8[vth] @m.xcasc.xm1.msky130_fd_pr__nfet_01v8[vdsat] @m.xcasc.xm1.msky130_fd_pr__nfet_01v8[gm] @m.xcasc.xm1.msky130_fd_pr__nfet_01v8[gds]
+print @m.xcasc.xm2.msky130_fd_pr__nfet_01v8[id] @m.xcasc.xm2.msky130_fd_pr__nfet_01v8[vgs] @m.xcasc.xm2.msky130_fd_pr__nfet_01v8[vds] @m.xcasc.xm2.msky130_fd_pr__nfet_01v8[vth] @m.xcasc.xm2.msky130_fd_pr__nfet_01v8[vdsat] @m.xcasc.xm2.msky130_fd_pr__nfet_01v8[gm] @m.xcasc.xm2.msky130_fd_pr__nfet_01v8[gds]
+print @m.xcasc.xm3.msky130_fd_pr__nfet_01v8[id] @m.xcasc.xm3.msky130_fd_pr__nfet_01v8[vgs] @m.xcasc.xm3.msky130_fd_pr__nfet_01v8[vds] @m.xcasc.xm3.msky130_fd_pr__nfet_01v8[vth] @m.xcasc.xm3.msky130_fd_pr__nfet_01v8[vdsat] @m.xcasc.xm3.msky130_fd_pr__nfet_01v8[gm] @m.xcasc.xm3.msky130_fd_pr__nfet_01v8[gds]
+print @m.xcasc.xm4.msky130_fd_pr__nfet_01v8[id] @m.xcasc.xm4.msky130_fd_pr__nfet_01v8[vgs] @m.xcasc.xm4.msky130_fd_pr__nfet_01v8[vds] @m.xcasc.xm4.msky130_fd_pr__nfet_01v8[vth] @m.xcasc.xm4.msky130_fd_pr__nfet_01v8[vdsat] @m.xcasc.xm4.msky130_fd_pr__nfet_01v8[gm] @m.xcasc.xm4.msky130_fd_pr__nfet_01v8[gds]
+print @m.xsooch.xm5.msky130_fd_pr__nfet_01v8[id] @m.xsooch.xm5.msky130_fd_pr__nfet_01v8[vgs] @m.xsooch.xm5.msky130_fd_pr__nfet_01v8[vds] @m.xsooch.xm5.msky130_fd_pr__nfet_01v8[vth] @m.xsooch.xm5.msky130_fd_pr__nfet_01v8[vdsat] @m.xsooch.xm5.msky130_fd_pr__nfet_01v8[gm] @m.xsooch.xm5.msky130_fd_pr__nfet_01v8[gds]
+print @m.xsooch.xm1.msky130_fd_pr__nfet_01v8[id] @m.xsooch.xm1.msky130_fd_pr__nfet_01v8[vgs] @m.xsooch.xm1.msky130_fd_pr__nfet_01v8[vds] @m.xsooch.xm1.msky130_fd_pr__nfet_01v8[vth] @m.xsooch.xm1.msky130_fd_pr__nfet_01v8[vdsat] @m.xsooch.xm1.msky130_fd_pr__nfet_01v8[gm] @m.xsooch.xm1.msky130_fd_pr__nfet_01v8[gds]
+print @m.xsooch.xm2.msky130_fd_pr__nfet_01v8[id] @m.xsooch.xm2.msky130_fd_pr__nfet_01v8[vgs] @m.xsooch.xm2.msky130_fd_pr__nfet_01v8[vds] @m.xsooch.xm2.msky130_fd_pr__nfet_01v8[vth] @m.xsooch.xm2.msky130_fd_pr__nfet_01v8[vdsat] @m.xsooch.xm2.msky130_fd_pr__nfet_01v8[gm] @m.xsooch.xm2.msky130_fd_pr__nfet_01v8[gds]
+print @m.xsooch.xm3.msky130_fd_pr__nfet_01v8[id] @m.xsooch.xm3.msky130_fd_pr__nfet_01v8[vgs] @m.xsooch.xm3.msky130_fd_pr__nfet_01v8[vds] @m.xsooch.xm3.msky130_fd_pr__nfet_01v8[vth] @m.xsooch.xm3.msky130_fd_pr__nfet_01v8[vdsat] @m.xsooch.xm3.msky130_fd_pr__nfet_01v8[gm] @m.xsooch.xm3.msky130_fd_pr__nfet_01v8[gds]
+print @m.xsooch.xm4.msky130_fd_pr__nfet_01v8[id] @m.xsooch.xm4.msky130_fd_pr__nfet_01v8[vgs] @m.xsooch.xm4.msky130_fd_pr__nfet_01v8[vds] @m.xsooch.xm4.msky130_fd_pr__nfet_01v8[vth] @m.xsooch.xm4.msky130_fd_pr__nfet_01v8[vdsat] @m.xsooch.xm4.msky130_fd_pr__nfet_01v8[gm] @m.xsooch.xm4.msky130_fd_pr__nfet_01v8[gds]
+.endc
+.end

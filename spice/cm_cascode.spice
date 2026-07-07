@@ -1,0 +1,17 @@
+**********************************************************************
+* Standard ("2-stack") cascode NMOS current mirror  -- 4 transistors
+*   M1/M2 bottom mirror pair, M3/M4 cascode pair.
+*   Input branch is diode-connected TWICE:
+*     ng  (M1/M2 gate rail) = na  (drain of M1)      -> Vgs
+*     ngc (M3/M4 gate rail) = iin (drain of M3)       -> 2*Vgs
+*   The cascode gate sits at 2*Vgs, so the output bottom device M2 is
+*   forced to Vds = Vgs = Vt+Vov (Vt of headroom wasted).
+*   Output compliance:  Vout,min = Vds2 + Vdsat4 = Vgs + Vov = Vt + 2*Vov
+* Ports:  iin  vout  vss     (force Iref into iin; observe Iout at vout)
+**********************************************************************
+.subckt cm_cascode iin vout vss  Wu=2 Lu=0.5
+XM1 na   na   vss vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}   $ bottom in  (diode: g=na)
+XM2 nb   na   vss vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}   $ bottom out (mirror)
+XM3 iin  iin  na  vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}   $ cascode in (diode: g=iin)
+XM4 vout iin  nb  vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}   $ cascode out
+.ends cm_cascode

@@ -1,0 +1,7 @@
+# ngspice / build intermediates
+spice/_*.spice
+spice/_run_*.spice
+schematic/_*.png
+doc/_iv_*.txt
+*.pyc
+__pycache__/

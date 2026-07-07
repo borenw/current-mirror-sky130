@@ -1,0 +1,22 @@
+**********************************************************************
+* Sooch wide-swing cascode NMOS current mirror  -- 5 transistors
+*   M1/M2 bottom mirror pair, M3/M4 cascode pair (gate rail = ncas),
+*   M5 diode bias device sized 1/4 aspect (Wb/Lb = (Wu/Lu)/4) so
+*     ncas = Vgs5 = Vt + 2*Vov     (vs 2*Vgs for the plain cascode).
+*   That biases the bottom devices at Vds = Vov (edge of saturation),
+*   recovering ~Vt of output headroom while keeping gm*ro^2 output R.
+*   Bottom gate rail ng = iin (drain of M3, self-biased at Vgs).
+*   Output compliance:  Vout,min = Vds2 + Vdsat4 = Vov + Vov = 2*Vov
+* Ports:  iin  ibias  vout  vss   (force Iref into BOTH iin and ibias)
+**********************************************************************
+* Bias device sizing note: the textbook "1/4 aspect" (Wb/Lb=(Wu/Lu)/4) rule assumes
+* square-law + matched Vth. In sky130 (moderate inversion, Vth shifts with L) that rule
+* lands the bottom devices in triode, collapsing Rout. Wb=0.5/Lb=1.0 is the retuned value
+* that seats M1/M2 just inside saturation -> ncas~1.0V, Rout~26MOhm, Vout,min~0.32V.
+.subckt cm_sooch iin ibias vout vss  Wu=2 Lu=0.5 Wb=0.5 Lb=1.0
+XM5 ibias ibias vss vss sky130_fd_pr__nfet_01v8 w={Wb} l={Lb}  $ 1/4-aspect bias diode -> ncas
+XM1 na    iin   vss vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}  $ bottom in  (g=iin=ng)
+XM2 nb    iin   vss vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}  $ bottom out (mirror)
+XM3 iin   ibias na  vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}  $ cascode in  (g=ncas)
+XM4 vout  ibias nb  vss sky130_fd_pr__nfet_01v8 w={Wu} l={Lu}  $ cascode out (g=ncas)
+.ends cm_sooch

@@ -1,0 +1,38 @@
+* Output characteristic (compliance), output resistance and line regulation
+* for both mirrors.  Sweeps the output-node voltage 0 -> 1.8 V at Iref = 10 uA.
+* Writes ../doc/_iv_cascode.txt and ../doc/_iv_sooch.txt (Vout[V]  Iout[uA])
+* consumed by ../plot.py, and prints Rout / Vout,min to the log.
+* Reproduce:  sed "s#PDK_ROOT#$PDK_ROOT#g" tb_compliance.spice | ngspice -b
+.lib "PDK_ROOT/sky130A/libs.tech/ngspice/sky130.lib.spice" tt
+.include "cm_cascode.spice"
+.include "cm_sooch.spice"
+
+Vvss  vss    0       0
+* ---- standard 2-stack cascode ----
+Iin_c vss    c_iin   dc 10u
+Vo_c  c_vout vss     0
+Xc    c_iin  c_vout  vss cm_cascode
+* ---- Sooch wide-swing cascode ----
+Iin_s vss    s_iin   dc 10u
+Ib_s  vss    s_ibias dc 10u
+Vo_s  s_vout vss     0
+Xs    s_iin  s_ibias s_vout vss cm_sooch
+
+.control
+* sweep each output node; the other source stays at 0 (harmless).
+* step 0.005 V -> index 160 = 0.8 V, 180 = 0.9 V, 200 = 1.0 V.
+dc Vo_c 0 1.8 0.005
+let iout_c = -i(Vo_c)*1e6
+wrdata ../doc/_iv_cascode.txt iout_c
+let rout_c = 0.2/((iout_c[200]-iout_c[160])*1e-6)
+let i09c = iout_c[180]
+echo "cascode :  Iout(0.9V) = $&i09c uA   Rout = $&rout_c ohm"
+
+dc Vo_s 0 1.8 0.005
+let iout_s = -i(Vo_s)*1e6
+wrdata ../doc/_iv_sooch.txt iout_s
+let rout_s = 0.2/((iout_s[200]-iout_s[160])*1e-6)
+let i09s = iout_s[180]
+echo "sooch   :  Iout(0.9V) = $&i09s uA   Rout = $&rout_s ohm"
+.endc
+.end
