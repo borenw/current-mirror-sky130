@@ -1,90 +1,145 @@
-<svg viewBox="0 0 820 540" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
-<rect width="820" height="540" fill="white"/>
+<svg viewBox="0 0 1040 560" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,sans-serif">
+<rect width="1040" height="560" fill="white"/>
 <defs><marker id="ah" markerWidth="9" markerHeight="9" refX="4" refY="4.5" orient="auto"><path d="M0,1 L8,4.5 L0,8 z" fill="#172B4D"/></marker></defs>
-<text x="410.0" y="30" font-size="19" font-weight="bold" fill="#172B4D" text-anchor="middle">2-stack cascode NMOS current mirror  ·  4T</text>
-<text x="410.0" y="50" font-size="12.5" fill="#5b6b7f" text-anchor="middle">SKY130 nfet_01v8  ·  I_ref = 10 µA  ·  VDD = 1.8 V  ·  TT 27 °C</text>
-<line x1="150" y1="95" x2="500" y2="95" stroke="#172B4D" stroke-width="1.7"/>
-<text x="150" y="86" font-size="12" fill="#5b6b7f" text-anchor="start" font-weight="normal">VDD = 1.8 V</text>
-<line x1="250" y1="95" x2="250" y2="107.5" stroke="#172B4D" stroke-width="1.7"/>
-<circle cx="250" cy="122.5" r="15" fill="none" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="130.5" x2="250" y2="115.5" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
-<line x1="250" y1="137.5" x2="250" y2="150" stroke="#172B4D" stroke-width="1.7"/>
-<text x="271" y="126.5" font-size="12.5" fill="#5b6b7f" text-anchor="start" font-style="italic" font-weight="normal">I_ref = 10 µA</text>
-<line x1="250" y1="168" x2="250" y2="182" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="218" x2="250" y2="232" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="182" x2="250" y2="218" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="242" y1="185" x2="242" y2="215" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="220" y1="200" x2="242" y2="200" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="232" x2="249.99" y2="222" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
-<text x="262" y="205" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M3</text>
-<line x1="250" y1="303" x2="250" y2="317" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="353" x2="250" y2="367" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="317" x2="250" y2="353" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="242" y1="320" x2="242" y2="350" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="220" y1="335" x2="242" y2="335" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="367" x2="249.99" y2="357" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
-<text x="262" y="340" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M1</text>
-<line x1="430" y1="168" x2="430" y2="182" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="218" x2="430" y2="232" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="182" x2="430" y2="218" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="422" y1="185" x2="422" y2="215" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="400" y1="200" x2="422" y2="200" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="232" x2="429.99" y2="222" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
-<text x="442" y="205" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M4</text>
-<line x1="430" y1="303" x2="430" y2="317" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="353" x2="430" y2="367" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="317" x2="430" y2="353" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="422" y1="320" x2="422" y2="350" stroke="#172B4D" stroke-width="2.6"/>
-<line x1="400" y1="335" x2="422" y2="335" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="367" x2="429.99" y2="357" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
-<text x="442" y="340" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M2</text>
-<line x1="250" y1="150" x2="250" y2="168" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="232" x2="250" y2="303" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="250" y1="367" x2="250" y2="490" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="150" x2="430" y2="168" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="150" x2="500" y2="150" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="500" y1="150" x2="500" y2="183" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
-<text x="510" y="150" font-size="12.5" fill="#1B6CA8" text-anchor="start" font-style="italic" font-weight="normal">I_out</text>
-<text x="510" y="166" font-size="11" fill="#5b6b7f" text-anchor="start" font-weight="normal">→ load</text>
-<line x1="430" y1="232" x2="430" y2="303" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="430" y1="367" x2="430" y2="490" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="220" y1="200" x2="204" y2="200" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="204" y1="200" x2="204" y2="165" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="204" y1="165" x2="250" y2="165" stroke="#172B4D" stroke-width="1.7"/>
-<circle cx="250" cy="165" r="3.3" fill="#172B4D"/>
-<line x1="400" y1="200" x2="204" y2="200" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="204" y1="200" x2="204" y2="200" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="220" y1="335" x2="190" y2="335" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="190" y1="335" x2="190" y2="306" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="190" y1="306" x2="250" y2="306" stroke="#172B4D" stroke-width="1.7"/>
-<circle cx="250" cy="306" r="3.3" fill="#172B4D"/>
-<line x1="190" y1="335" x2="190" y2="390" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="190" y1="390" x2="400" y2="390" stroke="#172B4D" stroke-width="1.7"/>
-<path d="M243,390 A7,7 0 0 1 257,390" fill="none" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="400" y1="390" x2="400" y2="335" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="150" y1="490" x2="500" y2="490" stroke="#172B4D" stroke-width="1.7"/>
-<circle cx="250" cy="490" r="3.3" fill="#172B4D"/>
-<circle cx="430" cy="490" r="3.3" fill="#172B4D"/>
-<line x1="340" y1="490" x2="340" y2="502" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="329" y1="502" x2="351" y2="502" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="333" y1="507" x2="347" y2="507" stroke="#172B4D" stroke-width="1.7"/>
-<line x1="337" y1="512" x2="343" y2="512" stroke="#172B4D" stroke-width="1.7"/>
-<text x="264" y="158" font-size="12.5" fill="#C1440E" text-anchor="start" font-weight="bold">iin</text>
-<text x="264" y="173" font-size="12" fill="#C1440E" text-anchor="start" font-weight="normal">1.66 V</text>
-<text x="264" y="298" font-size="12.5" fill="#C1440E" text-anchor="start" font-weight="bold">na</text>
-<text x="264" y="313" font-size="12" fill="#C1440E" text-anchor="start" font-weight="normal">0.76 V</text>
-<text x="444" y="298" font-size="12.5" fill="#C1440E" text-anchor="start" font-weight="bold">nb</text>
-<text x="444" y="313" font-size="12" fill="#C1440E" text-anchor="start" font-weight="normal">0.75 V</text>
-<text x="444" y="158" font-size="12.5" fill="#1B6CA8" text-anchor="start" font-weight="bold">vout</text>
-<text x="444" y="173" font-size="12" fill="#1B6CA8" text-anchor="start" font-weight="normal">0.90 V</text>
-<rect x="560" y="150" width="240" height="120" rx="7" fill="#fbf3ee" stroke="#C1440E" stroke-width="1.2"/>
-<text x="574" y="175" font-size="12.5" fill="#172B4D" text-anchor="start" font-weight="bold">All devices</text>
-<text x="680" y="175" font-size="12.5" fill="#C1440E" text-anchor="start" font-weight="bold">W/L = 2 / 0.5 µm</text>
-<text x="574" y="200" font-size="11.5" fill="#172B4D" text-anchor="start" font-weight="normal">M3,M4 gates biased at 2·V_gs,</text>
-<text x="574" y="216" font-size="11.5" fill="#C1440E" text-anchor="start" font-weight="normal">so M2 sits at V_ds = V_gs = 0.75 V</text>
-<text x="574" y="232" font-size="11.5" fill="#172B4D" text-anchor="start" font-weight="normal">(≈V_t of headroom wasted); M4 has</text>
-<text x="574" y="248" font-size="11.5" fill="#C1440E" text-anchor="start" font-weight="normal">only V_ds = 0.15 V → r_o ≈ 60 kΩ.</text>
-<rect x="560" y="285" width="240" height="66" rx="7" fill="#f4f0ea" stroke="#5b6b7f" stroke-width="1.2"/>
-<text x="574" y="308" font-size="12.5" fill="#172B4D" text-anchor="start" font-weight="bold">V_out,min = V_t + 2V_ov = 0.72 V</text>
-<text x="574" y="330" font-size="12.5" fill="#172B4D" text-anchor="start" font-weight="bold">R_out = 5.5 MΩ   (@ V_out = 0.9 V)</text>
+<text x="520.0" y="30" font-size="19" font-weight="bold" fill="#172B4D" text-anchor="middle">2-stack cascode NMOS current mirror  ·  4T</text>
+<text x="520.0" y="50" font-size="12.5" fill="#5b6b7f" text-anchor="middle">SKY130 nfet_01v8  ·  I_ref = 10 µA  ·  VDD = 1.8 V  ·  TT 27 °C   (op point per device)</text>
+<line x1="300" y1="95" x2="680" y2="95" stroke="#172B4D" stroke-width="1.7"/>
+<text x="300" y="86" font-size="12" fill="#5b6b7f" text-anchor="start" font-weight="normal">VDD = 1.8 V</text>
+<line x1="390" y1="95" x2="390" y2="107.5" stroke="#172B4D" stroke-width="1.7"/>
+<circle cx="390" cy="122.5" r="15" fill="none" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="130.5" x2="390" y2="115.5" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
+<line x1="390" y1="137.5" x2="390" y2="150" stroke="#172B4D" stroke-width="1.7"/>
+<text x="411" y="126.5" font-size="12.5" fill="#5b6b7f" text-anchor="start" font-style="italic" font-weight="normal">I_ref = 10 µA</text>
+<line x1="390" y1="183" x2="390" y2="197" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="233" x2="390" y2="247" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="197" x2="390" y2="233" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="382" y1="200" x2="382" y2="230" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="360" y1="215" x2="382" y2="215" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="247" x2="389.99" y2="237" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
+<text x="402" y="220" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M3</text>
+<line x1="390" y1="328" x2="390" y2="342" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="378" x2="390" y2="392" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="342" x2="390" y2="378" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="382" y1="345" x2="382" y2="375" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="360" y1="360" x2="382" y2="360" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="392" x2="389.99" y2="382" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
+<text x="402" y="365" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M1</text>
+<line x1="590" y1="183" x2="590" y2="197" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="233" x2="590" y2="247" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="197" x2="590" y2="233" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="582" y1="200" x2="582" y2="230" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="560" y1="215" x2="582" y2="215" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="247" x2="589.99" y2="237" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
+<text x="602" y="220" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M4</text>
+<line x1="590" y1="328" x2="590" y2="342" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="378" x2="590" y2="392" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="342" x2="590" y2="378" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="582" y1="345" x2="582" y2="375" stroke="#172B4D" stroke-width="2.6"/>
+<line x1="560" y1="360" x2="582" y2="360" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="392" x2="589.99" y2="382" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
+<text x="602" y="365" font-size="15" fill="#172B4D" text-anchor="start" font-weight="bold">M2</text>
+<line x1="390" y1="150" x2="390" y2="183" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="247" x2="390" y2="328" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="390" y1="392" x2="390" y2="515" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="150" x2="590" y2="183" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="150" x2="660" y2="150" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="660" y1="150" x2="660" y2="183" stroke="#172B4D" stroke-width="1.7" marker-end="url(#ah)"/>
+<text x="670" y="150" font-size="12.5" fill="#1B6CA8" text-anchor="start" font-style="italic" font-weight="normal">I_out</text>
+<text x="670" y="166" font-size="11" fill="#5b6b7f" text-anchor="start" font-weight="normal">→ load</text>
+<line x1="590" y1="247" x2="590" y2="328" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="590" y1="392" x2="590" y2="515" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="360" y1="215" x2="344" y2="215" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="344" y1="215" x2="344" y2="165" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="344" y1="165" x2="390" y2="165" stroke="#172B4D" stroke-width="1.7"/>
+<circle cx="390" cy="165" r="3.3" fill="#172B4D"/>
+<line x1="560" y1="215" x2="344" y2="215" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="344" y1="215" x2="344" y2="215" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="360" y1="360" x2="330" y2="360" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="330" y1="360" x2="330" y2="306" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="330" y1="306" x2="390" y2="306" stroke="#172B4D" stroke-width="1.7"/>
+<circle cx="390" cy="306" r="3.3" fill="#172B4D"/>
+<line x1="330" y1="360" x2="330" y2="415" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="330" y1="415" x2="560" y2="415" stroke="#172B4D" stroke-width="1.7"/>
+<path d="M383,415 A7,7 0 0 1 397,415" fill="none" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="560" y1="415" x2="560" y2="360" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="300" y1="515" x2="680" y2="515" stroke="#172B4D" stroke-width="1.7"/>
+<circle cx="390" cy="515" r="3.3" fill="#172B4D"/>
+<circle cx="590" cy="515" r="3.3" fill="#172B4D"/>
+<line x1="490" y1="515" x2="490" y2="527" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="479" y1="527" x2="501" y2="527" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="483" y1="532" x2="497" y2="532" stroke="#172B4D" stroke-width="1.7"/>
+<line x1="487" y1="537" x2="493" y2="537" stroke="#172B4D" stroke-width="1.7"/>
+<text x="404" y="158" font-size="12.5" fill="#C1440E" text-anchor="start" font-weight="bold">iin</text>
+<text x="404" y="173" font-size="12" fill="#C1440E" text-anchor="start" font-weight="normal">1.66 V</text>
+<text x="404" y="300" font-size="12.5" fill="#C1440E" text-anchor="start" font-weight="bold">na</text>
+<text x="404" y="315" font-size="12" fill="#C1440E" text-anchor="start" font-weight="normal">0.76 V</text>
+<text x="604" y="300" font-size="12.5" fill="#C1440E" text-anchor="start" font-weight="bold">nb</text>
+<text x="604" y="315" font-size="12" fill="#C1440E" text-anchor="start" font-weight="normal">0.75 V</text>
+<text x="604" y="158" font-size="12.5" fill="#1B6CA8" text-anchor="start" font-weight="bold">vout</text>
+<text x="604" y="173" font-size="12" fill="#1B6CA8" text-anchor="start" font-weight="normal">0.90 V</text>
+<line x1="360" y1="215" x2="216" y2="200.0" stroke="#C1440E" stroke-width="1.0" stroke-dasharray="3,3"/>
+<circle cx="360" cy="215" r="2.6" fill="#C1440E"/>
+<rect x="20" y="150" width="196" height="100" rx="7" fill="#ffffff" stroke="#C1440E" stroke-width="1.2"/>
+<text x="30" y="167" font-size="14" fill="#C1440E" text-anchor="start" font-weight="bold">M3</text>
+<text x="207" y="165" font-size="10" fill="#5b6b7f" text-anchor="end" font-weight="normal">W/L 2/0.5</text>
+<text x="207" y="177" font-size="9.5" fill="#C1440E" text-anchor="end" font-weight="normal">saturation</text>
+<line x1="29" y1="173" x2="207" y2="173" stroke="#C1440E" stroke-width="0.7"/>
+<text x="30" y="190" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Id = 10.0 µA</text>
+<text x="124" y="190" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vds = 0.90 V</text>
+<text x="30" y="203.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vgs = 0.90 V</text>
+<text x="124" y="203.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vth = 0.79 V</text>
+<text x="30" y="217.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vov = 0.11 V</text>
+<text x="124" y="217.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vdsat = 0.14 V</text>
+<text x="30" y="230.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm = 128 µS</text>
+<text x="124" y="230.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">ro = 1.04 MΩ</text>
+<text x="30" y="244.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm/Id = 12.8 /V</text>
+<line x1="360" y1="360" x2="216" y2="395.0" stroke="#C1440E" stroke-width="1.0" stroke-dasharray="3,3"/>
+<circle cx="360" cy="360" r="2.6" fill="#C1440E"/>
+<rect x="20" y="345" width="196" height="100" rx="7" fill="#ffffff" stroke="#C1440E" stroke-width="1.2"/>
+<text x="30" y="362" font-size="14" fill="#C1440E" text-anchor="start" font-weight="bold">M1</text>
+<text x="207" y="360" font-size="10" fill="#5b6b7f" text-anchor="end" font-weight="normal">W/L 2/0.5</text>
+<text x="207" y="372" font-size="9.5" fill="#C1440E" text-anchor="end" font-weight="normal">saturation</text>
+<line x1="29" y1="368" x2="207" y2="368" stroke="#C1440E" stroke-width="0.7"/>
+<text x="30" y="385" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Id = 10.0 µA</text>
+<text x="124" y="385" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vds = 0.76 V</text>
+<text x="30" y="398.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vgs = 0.76 V</text>
+<text x="124" y="398.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vth = 0.63 V</text>
+<text x="30" y="412.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vov = 0.13 V</text>
+<text x="124" y="412.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vdsat = 0.13 V</text>
+<text x="30" y="425.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm = 124 µS</text>
+<text x="124" y="425.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">ro = 965 kΩ</text>
+<text x="30" y="439.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm/Id = 12.4 /V</text>
+<line x1="598" y1="215" x2="824" y2="200.0" stroke="#C1440E" stroke-width="1.0" stroke-dasharray="3,3"/>
+<circle cx="598" cy="215" r="2.6" fill="#C1440E"/>
+<rect x="824" y="150" width="196" height="100" rx="7" fill="#ffffff" stroke="#C1440E" stroke-width="1.2"/>
+<text x="834" y="167" font-size="14" fill="#C1440E" text-anchor="start" font-weight="bold">M4</text>
+<text x="1011" y="165" font-size="10" fill="#5b6b7f" text-anchor="end" font-weight="normal">W/L 2/0.5</text>
+<text x="1011" y="177" font-size="9.5" fill="#C1440E" text-anchor="end" font-weight="normal">saturation</text>
+<line x1="833" y1="173" x2="1011" y2="173" stroke="#C1440E" stroke-width="0.7"/>
+<text x="834" y="190" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Id = 10.0 µA</text>
+<text x="928" y="190" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vds = 0.15 V</text>
+<text x="834" y="203.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vgs = 0.91 V</text>
+<text x="928" y="203.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vth = 0.79 V</text>
+<text x="834" y="217.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vov = 0.13 V</text>
+<text x="928" y="217.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vdsat = 0.14 V</text>
+<text x="834" y="230.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm = 111 µS</text>
+<text x="928" y="230.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">ro = 60 kΩ</text>
+<text x="834" y="244.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm/Id = 11.2 /V</text>
+<line x1="598" y1="360" x2="824" y2="395.0" stroke="#C1440E" stroke-width="1.0" stroke-dasharray="3,3"/>
+<circle cx="598" cy="360" r="2.6" fill="#C1440E"/>
+<rect x="824" y="345" width="196" height="100" rx="7" fill="#ffffff" stroke="#C1440E" stroke-width="1.2"/>
+<text x="834" y="362" font-size="14" fill="#C1440E" text-anchor="start" font-weight="bold">M2</text>
+<text x="1011" y="360" font-size="10" fill="#5b6b7f" text-anchor="end" font-weight="normal">W/L 2/0.5</text>
+<text x="1011" y="372" font-size="9.5" fill="#C1440E" text-anchor="end" font-weight="normal">saturation</text>
+<line x1="833" y1="368" x2="1011" y2="368" stroke="#C1440E" stroke-width="0.7"/>
+<text x="834" y="385" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Id = 10.0 µA</text>
+<text x="928" y="385" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vds = 0.75 V</text>
+<text x="834" y="398.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vgs = 0.76 V</text>
+<text x="928" y="398.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vth = 0.63 V</text>
+<text x="834" y="412.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vov = 0.13 V</text>
+<text x="928" y="412.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">Vdsat = 0.13 V</text>
+<text x="834" y="425.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm = 124 µS</text>
+<text x="928" y="425.5" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">ro = 957 kΩ</text>
+<text x="834" y="439.0" font-size="10.5" fill="#172B4D" text-anchor="start" font-weight="normal">gm/Id = 12.4 /V</text>
+<text x="520.0" y="544" font-size="11.5" fill="#172B4D" text-anchor="middle" font-weight="bold">V_out,min = V_t + 2V_ov = 0.72 V      R_out = 5.5 MΩ @ V_out=0.9 V      Σ(W·L) = 4.0 µm²   —   note M2 wastes ≈V_t (V_ds=V_gs) and M4 is starved (V_ds=0.15 V, r_o=60 kΩ)</text>
 </svg>
