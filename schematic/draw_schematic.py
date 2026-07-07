@@ -35,6 +35,13 @@ def hop(x,y,r=7): return f'<path d="M{x-r},{y} A{r},{r} 0 0 1 {x+r},{y}" fill="n
 def rbox(x,y,w,h,fill,stroke,sw=1.2): return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="7" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>\n'
 def gnd(x,y): return (L(x,y,x,y+12)+L(x-11,y+12,x+11,y+12)+L(x-7,y+17,x+7,y+17)+L(x-3,y+22,x+3,y+22))
 def nodev(x,y,node,v,c,anc="start"): return T(x,y,node,12.5,c,anc=anc,w="bold")+T(x,y+15,v,12,c,anc=anc)
+IGRN="#0B8457"
+def ibr(x,ytop,label,side="left"):
+    """branch-current arrow (flowing down into the branch) + label near the top."""
+    s=L(x,ytop,x,ytop+16,c=IGRN,w=2.6,arrow=True)
+    tx=x-10 if side=="left" else x+10
+    s+=T(tx,ytop+12,label,11.5,IGRN,anc=("end" if side=="left" else "start"),w="bold")
+    return s
 
 def nmos(cx,cy,name,name_side="right"):
     s =L(cx,cy-32,cx,cy-18)+L(cx,cy+18,cx,cy+32)+L(cx,cy-18,cx,cy+18,w=2.6)
@@ -77,7 +84,7 @@ def card(x,y,dev,op,wl,color,dev_xy,attach="left"):
 def cascode():
     op=OP["cascode"]; wl=WL["cascode"]
     W,H=1040,560
-    s=head(W,H,"2-stack cascode NMOS current mirror  ·  4T",
+    s=head(W,H,"Figure 1 · 2-stack cascode NMOS current mirror (4T)",
            "SKY130 nfet_01v8  ·  I_ref = 10 µA  ·  VDD = 1.8 V  ·  TT 27 °C   (op point per device)")
     xin,xout=390,590; yvdd=95; ygnd=515; yT,yB=215,360
     s+=L(300,yvdd,680,yvdd)+T(300,yvdd-9,"VDD = 1.8 V",12,MUT)
@@ -91,8 +98,11 @@ def cascode():
     s+=T(xout+80,150,"I_out",12.5,SOOCH,style="italic")+T(xout+80,166,"→ load",11,MUT)
     s+=L(*s4,*d2)+L(*s2,xout,ygnd)
     rc=g3[0]-16
-    s+=L(*g3,rc,g3[1])+L(rc,g3[1],rc,165)+L(rc,165,xin,165)+D(xin,165)
+    s+=L(*g3,rc,g3[1])+L(rc,g3[1],rc,180)+L(rc,180,xin,180)+D(xin,180)
     s+=L(*g4,rc,g4[1])+L(rc,g4[1],rc,g3[1])
+    # branch currents (top of each branch)
+    s+=ibr(xin,151,"I_ref = 10 µA","left")
+    s+=ibr(xout,151,"I_out = 10 µA","left")
     ybus=yB+55
     s+=L(*g1,g1[0]-30,g1[1])+L(g1[0]-30,g1[1],g1[0]-30,306)+L(g1[0]-30,306,xin,306)+D(xin,306)
     s+=L(g1[0]-30,g1[1],g1[0]-30,ybus)+L(g1[0]-30,ybus,g2[0],ybus)+hop(xin,ybus)+L(g2[0],ybus,g2[0],g2[1])
@@ -116,7 +126,7 @@ def cascode():
 def sooch():
     op=OP["sooch"]; wl=WL["sooch"]
     W,H=1180,640
-    s=head(W,H,"Sooch wide-swing cascode NMOS current mirror  ·  5T",
+    s=head(W,H,"Figure 2 · Sooch wide-swing cascode NMOS current mirror (5T)",
            "SKY130 nfet_01v8  ·  I_ref = 10 µA  ·  VDD = 1.8 V  ·  TT 27 °C   (op point per device)")
     xb,xin,xout=470,650,820; yvdd=95; ygnd=560; yT,yB=250,410
     s+=L(410,yvdd,900,yvdd)+T(410,yvdd-9,"VDD = 1.8 V",12,MUT)
@@ -132,6 +142,10 @@ def sooch():
     s+=L(xout,150,*d4)+L(xout,150,xout+70,150)+L(xout+70,150,xout+70,185,arrow=True)
     s+=T(xout+80,150,"I_out",12.5,SOOCH,style="italic")+T(xout+80,166,"→ load",11,MUT)
     s+=L(*s4,*d2)+L(*s2,xout,ygnd)
+    # branch currents (top of each branch)
+    s+=ibr(xb,151,"I_bias = 10 µA","left")
+    s+=ibr(xin,151,"I_ref = 10 µA","left")
+    s+=ibr(xout,151,"I_out = 10 µA","left")
     yn=205
     s+=L(xb,d5[1],xb,yn)+D(xb,yn)
     rc3=g3[0]-16; rc4=g4[0]-16

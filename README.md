@@ -28,6 +28,8 @@ choice sets how much of the supply rail is left for the output.
 
 ![2-stack cascode schematic](schematic/cm_cascode.png)
 
+*Figure 1 — 2-stack cascode: per-device op-point cards, node voltages, and branch currents.*
+
 The input branch is **diode-connected twice**, so the cascode gate rail sits at
 `2·V_gs ≈ 1.66 V`. That forces the output mirror device `M2` to `V_ds = V_gs`
 (≈ `V_t` of headroom **wasted**), and pushes the minimum output voltage up to
@@ -36,6 +38,8 @@ The input branch is **diode-connected twice**, so the cascode gate rail sits at
 ### Sooch wide-swing cascode (5T) — a 1/4-size bias device drops the gate to V_t + 2·V_ov
 
 ![Sooch wide-swing cascode schematic](schematic/cm_sooch.png)
+
+*Figure 2 — Sooch wide-swing cascode: the 5th device M5 (¼-aspect) sets the low cascode-gate bias.*
 
 An extra diode-connected device `M5` (sized ~¼ the aspect ratio) generates a
 lower cascode-gate bias `ncas = V_t + 2·V_ov ≈ 1.02 V`. Now the bottom devices
@@ -105,6 +109,8 @@ and a second reference-current leg.
 
 ![output characteristic](doc/iv_compliance.png)
 
+*Figure 3 — output characteristic I_out vs V_out (knee zoom inset).*
+
 Sweeping the output-node voltage (`ngspice -b tb_compliance.spice`): both mirrors
 hold 10 µA in deep saturation, but the Sooch curve stays flat down to
 **0.34 V** while the cascode has already collapsed by **0.72 V** — a **0.38 V**
@@ -112,6 +118,8 @@ recovery of output range. The zoomed knee shows the Sooch curve is also
 *flatter* in the usable region (higher R_out).
 
 ![how each mirror spends the rail](doc/headroom_bars.png)
+
+*Figure 4 — output-node voltage budget on the 1.8 V rail (bias headroom vs usable swing).*
 
 ---
 
@@ -139,6 +147,17 @@ recovery of output range. The zoomed knee shows the Sooch curve is also
   **W/L = 0.5 / 1.0 µm** raises `ncas` to 1.02 V and seats `M1`/`M2` at
   `V_ds ≈ 0.21 V` — just inside saturation — recovering the full 26 MΩ. This is
   the design margin baked into `cm_sooch.spice`.
+
+  **Why M5's channel length (1.0 µm) differs from cascode M3 (0.5 µm).** M5 is a
+  *bias-only* device: it must develop the higher `V_gs = V_t + 2·V_ov` that sets
+  `ncas`, which needs a **small aspect ratio** `W/L` (≈ ⅛ of the unit device) so
+  the same 10 µA produces a large overdrive — `V_ov ≈ 0.43 V`, `g_m/I_D ≈ 4.3`
+  (strong inversion), visible on its op-card. W is already at the ~0.42 µm
+  minimum, so the aspect ratio is cut by **lengthening L to 1.0 µm** rather than
+  narrowing W further; the longer channel also gives `M5` a higher `r_o`
+  (1.46 MΩ) so `ncas` is better defined. `M3` is instead a signal-path cascode
+  carrying the mirror current and keeps the unit `L = 0.5 µm` for good `r_o` at
+  minimum area.
 
 - **Input-side headroom is the cascode's other hidden cost.** The 2-stack
   cascode needs `2·V_gs = 1.66 V` just to bias its reference branch — only
